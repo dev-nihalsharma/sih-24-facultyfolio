@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ElevateEd',
+  title: 'FacultyFolio',
   description: 'An Effective & ML Powered system for faculty appraisal and real time management',
 };
 
