@@ -1,25 +1,27 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
-
+import { useToken } from "./TokenContext";
 interface AddSubjectModalProps {
   show: boolean;
   onClose: () => void;
 }
 
 export default function AddSubjectModal({
+
   show,
   onClose,
 }: AddSubjectModalProps) {
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const [description, setDescription] = useState("");
+  const {token} =useToken();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
       await axios.post("https://facultyfolio.sujal.info/subject/add", {
-        _orgId: "357719f42dda",
+        token,
         name,
         code,
         description,

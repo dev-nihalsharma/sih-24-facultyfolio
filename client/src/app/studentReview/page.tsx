@@ -24,7 +24,6 @@ const Page: React.FC = () => {
   const [orgId, setOrgId] = useState("");
   const [organizations, setOrganizations] = useState<Org[]>([]);
   const [faculties, setFaculties] = useState<Faculty[]>([]);
-  const [token, setToken] = useState("");
   const [loading, setLoading] = useState(true);
 
   const router = useRouter();
@@ -34,53 +33,28 @@ const Page: React.FC = () => {
     return cookie ? cookie.split("=")[1] : null;
   };
 
-  useEffect(() => {
-    const fetchToken = () => {
-      try {
-        const tokenCookie = getCookieValue("token");
-        if (tokenCookie) {
-          setToken(tokenCookie);
-        }
-      } catch (error) {
-        console.error("Error fetching token:", error);
-      }
-    };
-    fetchToken();
-  }, []);
-
   const handleSignUp = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (token) {
-      try {
-        if (!rating || !facultyId || !orgId) {
-          alert("Please fill in all fields.");
-          return;
-        }
-
-        const res = await axios.post(
-          "https://facultyfolio.sujal.info/reviews",
-          {
-            name,
-            email,
-            reviewText,
-            rating,
-            _facultyId: facultyId,
-            token: token,
-          }
-        );
-
-        if (res?.data?.success) {
-          document.cookie = `token=${res?.data?.data?.token}; path=/; secure; samesite=strict;`;
-          document.cookie = `user=${encodeURIComponent(
-            JSON.stringify(res?.data?.data?.user)
-          )}; path=/; secure; samesite=strict;`;
-
-          toast.success("Review submitted successfully");
-          router.push("/dashboard");
-        }
-      } catch (error) {
-        console.log(error);
+    try {
+      if (!rating || !facultyId || !orgId) {
+        alert("Please fill in all fields.");
+        return;
       }
+
+      const res = await axios.post("https://facultyfolio.sujal.info/reviews", {
+        name,
+        email,
+        reviewText,
+        rating,
+        _facultyId: facultyId,
+      });
+
+      if (res?.data?.success) {
+        toast.success("Review submitted successfully");
+        router.push("/dashboard");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
