@@ -1,6 +1,6 @@
 # Automated System for Career Advancements of the Faculties of Higher Education
 
-<img src="/client/public/facultyfolio-techstack.png" width="full" />
+<img src="/files/facultyfolio-techstack.png" width="full" />
 
 This README provides an overview of the project, including team details, relevant links, tasks completed, tech stack, key features, and steps to run the project locally.
 
