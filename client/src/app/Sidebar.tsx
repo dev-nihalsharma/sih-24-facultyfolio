@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import axios from "axios";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaList } from "react-icons/fa";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface SidebarProps {
   username: string;
@@ -17,8 +17,28 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ username, role }) => {
   const pathName = usePathname();
   const router = useRouter();
+  const [orgId, setOrgId] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const FetchUsername = useCallback(async () => {
+    try {
+      const userCookie = document.cookie
+        .split("; ")
+        .find((cookie) => cookie.startsWith("user="));
 
+      if (userCookie) {
+        const userData = JSON.parse(
+          decodeURIComponent(userCookie.split("=")[1])
+        );
+
+        setOrgId(userData._orgId || "Guest");
+      }
+    } catch (error) {
+      console.error("Error fetching user:", error);
+    }
+  }, []);
+  useEffect(() => {
+    FetchUsername();
+  }, [FetchUsername]);
   const handleLogout = async () => {
     try {
       await axios.get("/api/logout");
@@ -132,6 +152,11 @@ const Sidebar: React.FC<SidebarProps> = ({ username, role }) => {
               <p className="text-gray-500 font-bold text-sm capitalize">
                 {role}
               </p>
+              {role == "manager" && (
+                <p className="text-gray-500  text-sm capitalize">
+                  OrgId: {orgId}
+                </p>
+              )}
             </div>
           </div>
 

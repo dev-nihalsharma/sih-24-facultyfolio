@@ -12,12 +12,15 @@ export default function Home() {
   const [role, setRole] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
   const [showSubjectModal, setShowSubjectModal] = useState(false);
+  const [timetableKey, setTimetableKey] = useState(0);
   const { token } = useToken(); // Access the token from the context
   const router = useRouter();
 
   const toggleEditModal = () => setShowEditModal(!showEditModal);
   const toggleSubjectModal = () => setShowSubjectModal(!showSubjectModal);
-
+  const refreshTimetable = () => {
+    setTimetableKey((prevKey) => prevKey + 1);
+  };
   useEffect(() => {
     const fetchUsername = () => {
       try {
@@ -71,11 +74,15 @@ export default function Home() {
             </>
           )}
           <div className="pt-5">
-            <Timetable />
+            <Timetable key={timetableKey} />
           </div>
         </section>
       </main>
-      <EditTimetableModal show={showEditModal} onClose={toggleEditModal} />
+      <EditTimetableModal
+        show={showEditModal}
+        onClose={toggleEditModal}
+        onSuccess={refreshTimetable}
+      />
       <SubjectFormModal show={showSubjectModal} onClose={toggleSubjectModal} />
     </>
   );

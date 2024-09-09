@@ -21,7 +21,7 @@ interface Event {
   date: string;
   time: string;
   venue: string;
-  assignedfaculty: string;
+  faculty: { fullName: string };
 }
 
 export function EventList() {
@@ -113,7 +113,7 @@ export function EventList() {
                   <span className="font-bold text-gray-800">
                     Assigned Faculty:
                   </span>
-                  {event.assignedfaculty || "N/A"}
+                  {event.faculty.fullName || "N/A"}
                 </p>
               </div>
             </Accordion.Content>

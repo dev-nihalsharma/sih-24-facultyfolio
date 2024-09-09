@@ -6,11 +6,13 @@ import { useToken } from "./TokenContext";
 interface EditTimetableModalProps {
   show: boolean;
   onClose: () => void;
+  onSuccess: () => void;
 }
 
 export default function EditTimetableModal({
   show,
   onClose,
+  onSuccess,
 }: EditTimetableModalProps) {
   const [day, setDay] = useState("");
   const [startTime, setStartTime] = useState("");
@@ -88,6 +90,7 @@ export default function EditTimetableModal({
       }
 
       onClose(); // Close modal after submission
+      onSuccess(); //Trigger refresh
     }
   };
 

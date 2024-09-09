@@ -12,6 +12,7 @@ import { useToken } from "../TokenContext"; // Import the token context
 export default function Home() {
   const [username, setUsername] = useState("Guest");
   const [role, setRole] = useState("");
+  const [orgId, setOrgId] = useState("");
   const [loading, setLoading] = useState(true); // Loading state for the entire page
   const [showAddEventModal, setShowAddEventModal] = useState(false); // Modal state
   const { token } = useToken(); // Access token from context
@@ -29,6 +30,7 @@ export default function Home() {
         );
         setUsername(userData.fullName || "Guest");
         setRole(userData.role || "Guest");
+        setOrgId(userData._orgId || "Guest");
       }
     } catch (error) {
       console.error("Error fetching user:", error);
@@ -39,7 +41,7 @@ export default function Home() {
 
   useEffect(() => {
     FetchUsername();
-  }, []);
+  }, [FetchUsername]);
 
   const handleOpenModal = () => {
     setShowAddEventModal(true); // Open modal
