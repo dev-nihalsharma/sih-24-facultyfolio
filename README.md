@@ -1,6 +1,6 @@
 # Automated System for Career Advancements of the Faculties of Higher Education
 
-<img src="https://raw.githubusercontent.com/dev-nihalsharma/sih24-r1-invoicely/main/client/public/facultyfolio-techstack.png" width="full" />
+<img src="https://raw.githubusercontent.com/dev-nihalsharma/sih-24-facultyfolio/main/client/public/facultyfolio-techstack.png" width="full" />
 
 This README provides an overview of the project, including team details, relevant links, tasks completed, tech stack, key features, and steps to run the project locally.
 
@@ -23,9 +23,9 @@ This README provides an overview of the project, including team details, relevan
 
 - **Internal Presentation:** [Internal Presentation](/files/Internal_PPT_HEXA-CODE.pdf)
 - **Final SIH Presentation:** [Final SIH Presentation](/files/SIH_PPT_HEXA-CODE.pdf)
-- **Video Demonstration:** [Watch Video]https://youtu.be/Do3K7ktkiVw?si=XyjBT69DgSe0C3H-
-- **Live Deployment:** [Visit Web App]https://facultyfolio.netlify.app/
-- **Source Code:** [GitHub Repository]https://github.com/dev-nihalsharma/sih-24-facultyfolio
+- **Video Demonstration:** [Watch Video](https://youtu.be/Do3K7ktkiVw?si=XyjBT69DgSe0C3H-)
+- **Live Deployment:** [Visit Web App](https://facultyfolio.netlify.app/)
+- **Source Code:** [GitHub Repository](https://github.com/dev-nihalsharma/sih-24-facultyfolio)
 
 ## Tasks Accomplished
 
