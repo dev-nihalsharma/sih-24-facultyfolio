@@ -1,0 +1,469 @@
+{
+  "search_metadata": {
+    "id": "66d91fc16aa364670ca0257b",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/86b930783b1ac1d1/66d91fc16aa364670ca0257b.json",
+    "created_at": "2024-09-05 03:04:33 UTC",
+    "processed_at": "2024-09-05 03:04:33 UTC",
+    "google_scholar_author_url": "https://scholar.google.com/citations?user=EicYvbwAAAAJ&hl=en",
+    "raw_html_file": "https://serpapi.com/searches/86b930783b1ac1d1/66d91fc16aa364670ca0257b.html",
+    "total_time_taken": 0.75
+  },
+  "search_parameters": {
+    "engine": "google_scholar_author",
+    "author_id": "EicYvbwAAAAJ",
+    "hl": "en"
+  },
+  "author": {
+    "name": "Ronald C Kessler",
+    "affiliations": "McNeil Family Professor of Health Care Policy, Harvard Medical School",
+    "email": "Verified email at hcp.med.harvard.edu",
+    "website": "https://scholar.harvard.edu/rckessler",
+    "interests": [
+      {
+        "title": "Psychiatric Epidemiology",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:psychiatric_epidemiology",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Apsychiatric_epidemiology"
+      }
+    ],
+    "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=EicYvbwAAAAJ&citpid=1"
+  },
+  "articles": [
+    {
+      "title": "Lifetime prevalence and age-of-onset distributions of DSM-IV disorders in the National Comorbidity Survey Replication",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:UeHWp8X0CEIC",
+      "citation_id": "EicYvbwAAAAJ:UeHWp8X0CEIC",
+      "authors": "RC Kessler, P Berglund, O Demler, R Jin, KR Merikangas, EE Walters",
+      "publication": "Archives of general psychiatry 62 (6), 593-602, 2005",
+      "cited_by": {
+        "value": 37625,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2173726401600747709,7905695317477875023,13998207051180299935,6712090670550418789,16204114791750186183,11857341765727177149,6440755144378445271,4333695256869118957,8105499853130787711,4971844839227102807",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2173726401600747709%2C7905695317477875023%2C13998207051180299935%2C6712090670550418789%2C16204114791750186183%2C11857341765727177149%2C6440755144378445271%2C4333695256869118957%2C8105499853130787711%2C4971844839227102807&engine=google_scholar&hl=en",
+        "cites_id": "2173726401600747709,7905695317477875023,13998207051180299935,6712090670550418789,16204114791750186183,11857341765727177149,6440755144378445271,4333695256869118957,8105499853130787711,4971844839227102807"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Lifetime and 12-month prevalence of DSM-III-R psychiatric disorders in the United States: results from the National Comorbidity Survey",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:u5HHmVD_uO8C",
+      "citation_id": "EicYvbwAAAAJ:u5HHmVD_uO8C",
+      "authors": "RC Kessler, KA McGonagle, S Zhao, CB Nelson, M Hughes, S Eshleman, ...",
+      "publication": "Archives of general psychiatry 51 (1), 8-19, 1994",
+      "cited_by": {
+        "value": 21455,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=9166229658659884654,16697615951175936624,6405444139477016554,9070347801863544040,12547172617798851969,9028572124582767810,14788406689424125393,13688238965805019665,6529840622575999790,8371852177847462981",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9166229658659884654%2C16697615951175936624%2C6405444139477016554%2C9070347801863544040%2C12547172617798851969%2C9028572124582767810%2C14788406689424125393%2C13688238965805019665%2C6529840622575999790%2C8371852177847462981&engine=google_scholar&hl=en",
+        "cites_id": "9166229658659884654,16697615951175936624,6405444139477016554,9070347801863544040,12547172617798851969,9028572124582767810,14788406689424125393,13688238965805019665,6529840622575999790,8371852177847462981"
+      },
+      "year": "1994"
+    },
+    {
+      "title": "Prevalence, severity, and comorbidity of 12-month DSM-IV disorders in the National Comorbidity Survey Replication",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:qjMakFHDy7sC",
+      "citation_id": "EicYvbwAAAAJ:qjMakFHDy7sC",
+      "authors": "RC Kessler, WT Chiu, O Demler, EE Walters",
+      "publication": "Archives of general psychiatry 62 (6), 617-627, 2005",
+      "cited_by": {
+        "value": 16980,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=9617930262438990334,2868652058781502804,12626316511850360144,13147119474050373048",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9617930262438990334%2C2868652058781502804%2C12626316511850360144%2C13147119474050373048&engine=google_scholar&hl=en",
+        "cites_id": "9617930262438990334,2868652058781502804,12626316511850360144,13147119474050373048"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Posttraumatic stress disorder in the National Comorbidity Survey",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:d1gkVwhDpl0C",
+      "citation_id": "EicYvbwAAAAJ:d1gkVwhDpl0C",
+      "authors": "RC Kessler, A Sonnega, E Bromet, M Hughes, CB Nelson",
+      "publication": "Fear and anxiety, 22-34, 2013",
+      "cited_by": {
+        "value": 16199,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16324230481226089294,18359294788557335402",
+        "serpapi_link": "https://serpapi.com/search.json?cites=16324230481226089294%2C18359294788557335402&engine=google_scholar&hl=en",
+        "cites_id": "16324230481226089294,18359294788557335402"
+      },
+      "year": "2013"
+    },
+    {
+      "title": "Short screening scales to monitor population prevalences and trends in non-specific psychological distress",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:Tyk-4Ss8FVUC",
+      "citation_id": "EicYvbwAAAAJ:Tyk-4Ss8FVUC",
+      "authors": "RC Kessler, G Andrews, LJ Colpe, E Hiripi, DK Mroczek, SLT Normand, ...",
+      "publication": "Psychological medicine 32 (6), 959-976, 2002",
+      "cited_by": {
+        "value": 10936,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3936934375932014266",
+        "serpapi_link": "https://serpapi.com/search.json?cites=3936934375932014266&engine=google_scholar&hl=en",
+        "cites_id": "3936934375932014266"
+      },
+      "year": "2002"
+    },
+    {
+      "title": "Trends in alternative medicine use in the United States, 1990-1997: results of a follow-up national survey",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:u-x6o8ySG0sC",
+      "citation_id": "EicYvbwAAAAJ:u-x6o8ySG0sC",
+      "authors": "DM Eisenberg, RB Davis, SL Ettner, S Appel, S Wilkey, M Van Rompay, ...",
+      "publication": "Jama 280 (18), 1569-1575, 1998",
+      "cited_by": {
+        "value": 10390,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4933417517875258609,990955712733401179,11500860323962628938,6982505915540324391",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4933417517875258609%2C990955712733401179%2C11500860323962628938%2C6982505915540324391&engine=google_scholar&hl=en",
+        "cites_id": "4933417517875258609,990955712733401179,11500860323962628938,6982505915540324391"
+      },
+      "year": "1998"
+    },
+    {
+      "title": "The prevalence and correlates of eating disorders in the National Comorbidity Survey Replication",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:LkGwnXOMwfcC",
+      "citation_id": "EicYvbwAAAAJ:LkGwnXOMwfcC",
+      "authors": "JI Hudson, E Hiripi, HG Pope Jr, RC Kessler",
+      "publication": "Biological psychiatry 61 (3), 348-358, 2007",
+      "cited_by": {
+        "value": 6914,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16214025089527386167,18251116897771648228",
+        "serpapi_link": "https://serpapi.com/search.json?cites=16214025089527386167%2C18251116897771648228&engine=google_scholar&hl=en",
+        "cites_id": "16214025089527386167,18251116897771648228"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Unconventional medicine in the United States--prevalence, costs, and patterns of use",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:2osOgNQ5qMEC",
+      "citation_id": "EicYvbwAAAAJ:2osOgNQ5qMEC",
+      "authors": "DM Eisenberg, RC Kessler, C Foster, FE Norlock, DR Calkins, ...",
+      "publication": "New England journal of medicine 328 (4), 246-252, 1993",
+      "cited_by": {
+        "value": 6804,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2343939237404764987,15620935948112459421,18399714229203535646",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2343939237404764987%2C15620935948112459421%2C18399714229203535646&engine=google_scholar&hl=en",
+        "cites_id": "2343939237404764987,15620935948112459421,18399714229203535646"
+      },
+      "year": "1993"
+    },
+    {
+      "title": "Lifetime prevalence and age-of-onset distributions of mental disorders in the World Health Organization's World Mental Health Survey Initiative",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:1qzjygNMrQYC",
+      "citation_id": "EicYvbwAAAAJ:1qzjygNMrQYC",
+      "authors": "RC Kessler, M Angermeyer, JC Anthony, RON De Graaf, K Demyttenaere, ...",
+      "publication": "World psychiatry 6 (3), 168, 2007",
+      "cited_by": {
+        "value": 6045,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18241229427581323652,14297090305402585503,6143271058671034732,18272510886541441381,11888455712585455357,18224331761563155761",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18241229427581323652%2C14297090305402585503%2C6143271058671034732%2C18272510886541441381%2C11888455712585455357%2C18224331761563155761&engine=google_scholar&hl=en",
+        "cites_id": "18241229427581323652,14297090305402585503,6143271058671034732,18272510886541441381,11888455712585455357,18224331761563155761"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Screening for serious mental illness in the general population",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:YOwf2qJgpHMC",
+      "citation_id": "EicYvbwAAAAJ:YOwf2qJgpHMC",
+      "authors": "RC Kessler, PR Barker, LJ Colpe, JF Epstein, JC Gfroerer, E Hiripi, ...",
+      "publication": "Archives of general psychiatry 60 (2), 184-189, 2003",
+      "cited_by": {
+        "value": 5962,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18386239957818682477",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18386239957818682477&engine=google_scholar&hl=en",
+        "cites_id": "18386239957818682477"
+      },
+      "year": "2003"
+    },
+    {
+      "title": "The prevalence and correlates of adult ADHD in the United States: results from the National Comorbidity Survey Replication",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:YsMSGLbcyi4C",
+      "citation_id": "EicYvbwAAAAJ:YsMSGLbcyi4C",
+      "authors": "RC Kessler, L Adler, R Barkley, J Biederman, CK Conners, O Demler, ...",
+      "publication": "American Journal of psychiatry 163 (4), 716-723, 2006",
+      "cited_by": {
+        "value": 5237,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=741023630186859582,626425893283720221",
+        "serpapi_link": "https://serpapi.com/search.json?cites=741023630186859582%2C626425893283720221&engine=google_scholar&hl=en",
+        "cites_id": "741023630186859582,626425893283720221"
+      },
+      "year": "2006"
+    },
+    {
+      "title": "The world mental health (WMH) survey initiative version of the world health organization (WHO) composite international diagnostic interview (CIDI)",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:W7OEmFMy1HYC",
+      "citation_id": "EicYvbwAAAAJ:W7OEmFMy1HYC",
+      "authors": "RC Kessler, TB Üstün",
+      "publication": "International journal of methods in psychiatric research 13 (2), 93-121, 2004",
+      "cited_by": {
+        "value": 4777,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14718217336991395568",
+        "serpapi_link": "https://serpapi.com/search.json?cites=14718217336991395568&engine=google_scholar&hl=en",
+        "cites_id": "14718217336991395568"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Prevalence, severity, and unmet need for treatment of mental disorders in the World Health Organization World Mental Health Surveys",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:VjBpw8Hezy4C",
+      "citation_id": "EicYvbwAAAAJ:VjBpw8Hezy4C",
+      "authors": "WHO World Mental Health Survey Consortium",
+      "publication": "Jama 291 (21), 2581-2590, 2004",
+      "cited_by": {
+        "value": 4504,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18098169779461301944,8525423576961754379,650282446486997972",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18098169779461301944%2C8525423576961754379%2C650282446486997972&engine=google_scholar&hl=en",
+        "cites_id": "18098169779461301944,8525423576961754379,650282446486997972"
+      },
+      "year": "2004"
+    },
+    {
+      "title": "Trauma and posttraumatic stress disorder in the community: the 1996 Detroit Area Survey of Trauma",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:IjCSPb-OGe4C",
+      "citation_id": "EicYvbwAAAAJ:IjCSPb-OGe4C",
+      "authors": "N Breslau, RC Kessler, HD Chilcoat, LR Schultz, GC Davis, P Andreski",
+      "publication": "Archives of general psychiatry 55 (7), 626-632, 1998",
+      "cited_by": {
+        "value": 4150,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=1380685493019404951",
+        "serpapi_link": "https://serpapi.com/search.json?cites=1380685493019404951&engine=google_scholar&hl=en",
+        "cites_id": "1380685493019404951"
+      },
+      "year": "1998"
+    },
+    {
+      "title": "Age of onset of mental disorders: a review of recent literature",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:ZfRJV9d4-WMC",
+      "citation_id": "EicYvbwAAAAJ:ZfRJV9d4-WMC",
+      "authors": "RC Kessler, GP Amminger, S Aguilar-Gaxiola, J Alonso, S Lee, TB Üstün",
+      "publication": "Current opinion in psychiatry 20 (4), 359-364, 2007",
+      "cited_by": {
+        "value": 4131,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=17426129971169750093",
+        "serpapi_link": "https://serpapi.com/search.json?cites=17426129971169750093&engine=google_scholar&hl=en",
+        "cites_id": "17426129971169750093"
+      },
+      "year": "2007"
+    },
+    {
+      "title": "Hydrogeochemistry of tunnel seepage water along the contact of zone of metasedimentary and granitic rock within the Pahang–Selangor Raw Water Transfer Tunnel Project, Malaysia",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:nmIsvVfQd4cC",
+      "citation_id": "EicYvbwAAAAJ:nmIsvVfQd4cC",
+      "authors": "SFFS Zainal, MAM Ismail, R Mostafa, N Narita, N Mahmood, SM Ng",
+      "publication": "Arabian Journal of Geosciences 9, 1-11, 2016",
+      "cited_by": {
+        "value": 4031,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16781175628590980807,17250030865744813768",
+        "serpapi_link": "https://serpapi.com/search.json?cites=16781175628590980807%2C17250030865744813768&engine=google_scholar&hl=en",
+        "cites_id": "16781175628590980807,17250030865744813768"
+      },
+      "year": "2016"
+    },
+    {
+      "title": "Twelve-month use of mental health services in the United States: results from the National Comorbidity Survey Replication",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:roLk4NBRz8UC",
+      "citation_id": "EicYvbwAAAAJ:roLk4NBRz8UC",
+      "authors": "PS Wang, M Lane, M Olfson, HA Pincus, KB Wells, RC Kessler",
+      "publication": "Archives of general psychiatry 62 (6), 629-640, 2005",
+      "cited_by": {
+        "value": 3625,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=9664995820535769061",
+        "serpapi_link": "https://serpapi.com/search.json?cites=9664995820535769061&engine=google_scholar&hl=en",
+        "cites_id": "9664995820535769061"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "The World Health Organization Adult ADHD Self-Report Scale (ASRS): a short screening scale for use in the general population",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:g5m5HwL7SMYC",
+      "citation_id": "EicYvbwAAAAJ:g5m5HwL7SMYC",
+      "authors": "RC Kessler, L Adler, M Ames, O Demler, S Faraone, EVA Hiripi, ...",
+      "publication": "Psychological medicine 35 (2), 245-256, 2005",
+      "cited_by": {
+        "value": 3563,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10976057455326458862",
+        "serpapi_link": "https://serpapi.com/search.json?cites=10976057455326458862&engine=google_scholar&hl=en",
+        "cites_id": "10976057455326458862"
+      },
+      "year": "2005"
+    },
+    {
+      "title": "Prevalence of and risk factors for lifetime suicide attempts in the National Comorbidity Survey",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:eQOLeE2rZwMC",
+      "citation_id": "EicYvbwAAAAJ:eQOLeE2rZwMC",
+      "authors": "RC Kessler, G Borges, EE Walters",
+      "publication": "Archives of general psychiatry 56 (7), 617-626, 1999",
+      "cited_by": {
+        "value": 3501,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16198452573860066271",
+        "serpapi_link": "https://serpapi.com/search.json?cites=16198452573860066271&engine=google_scholar&hl=en",
+        "cites_id": "16198452573860066271"
+      },
+      "year": "1999"
+    },
+    {
+      "title": "Twelve‐month and lifetime prevalence and lifetime morbid risk of anxiety and mood disorders in the United States",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EicYvbwAAAAJ&citation_for_view=EicYvbwAAAAJ:wLxue7F8ec0C",
+      "citation_id": "EicYvbwAAAAJ:wLxue7F8ec0C",
+      "authors": "RC Kessler, M Petukhova, NA Sampson, AM Zaslavsky, HU Wittchen",
+      "publication": "International journal of methods in psychiatric research 21 (3), 169-184, 2012",
+      "cited_by": {
+        "value": 3481,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=13469962035856245633,16945052686463786922",
+        "serpapi_link": "https://serpapi.com/search.json?cites=13469962035856245633%2C16945052686463786922&engine=google_scholar&hl=en",
+        "cites_id": "13469962035856245633,16945052686463786922"
+      },
+      "year": "2012"
+    }
+  ],
+  "cited_by": {
+    "table": [
+      {
+        "citations": {
+          "all": 573957,
+          "since_2019": 198985
+        }
+      },
+      {
+        "h_index": {
+          "all": 344,
+          "since_2019": 202
+        }
+      },
+      {
+        "i10_index": {
+          "all": 1283,
+          "since_2019": 1021
+        }
+      }
+    ],
+    "graph": [
+      {
+        "year": 1994,
+        "citations": 1596
+      },
+      {
+        "year": 1995,
+        "citations": 1963
+      },
+      {
+        "year": 1996,
+        "citations": 2319
+      },
+      {
+        "year": 1997,
+        "citations": 2922
+      },
+      {
+        "year": 1998,
+        "citations": 3440
+      },
+      {
+        "year": 1999,
+        "citations": 4050
+      },
+      {
+        "year": 2000,
+        "citations": 5620
+      },
+      {
+        "year": 2001,
+        "citations": 6177
+      },
+      {
+        "year": 2002,
+        "citations": 7139
+      },
+      {
+        "year": 2003,
+        "citations": 8161
+      },
+      {
+        "year": 2004,
+        "citations": 9326
+      },
+      {
+        "year": 2005,
+        "citations": 10160
+      },
+      {
+        "year": 2006,
+        "citations": 12026
+      },
+      {
+        "year": 2007,
+        "citations": 13264
+      },
+      {
+        "year": 2008,
+        "citations": 15574
+      },
+      {
+        "year": 2009,
+        "citations": 17361
+      },
+      {
+        "year": 2010,
+        "citations": 18666
+      },
+      {
+        "year": 2011,
+        "citations": 21127
+      },
+      {
+        "year": 2012,
+        "citations": 23246
+      },
+      {
+        "year": 2013,
+        "citations": 25790
+      },
+      {
+        "year": 2014,
+        "citations": 27237
+      },
+      {
+        "year": 2015,
+        "citations": 28864
+      },
+      {
+        "year": 2016,
+        "citations": 29223
+      },
+      {
+        "year": 2017,
+        "citations": 30034
+      },
+      {
+        "year": 2018,
+        "citations": 31613
+      },
+      {
+        "year": 2019,
+        "citations": 32875
+      },
+      {
+        "year": 2020,
+        "citations": 33994
+      },
+      {
+        "year": 2021,
+        "citations": 36660
+      },
+      {
+        "year": 2022,
+        "citations": 37041
+      },
+      {
+        "year": 2023,
+        "citations": 35658
+      },
+      {
+        "year": 2024,
+        "citations": 22592
+      }
+    ]
+  },
+  "public_access": {
+    "link": "https://scholar.google.com/citations?view_op=list_mandates&hl=en&user=EicYvbwAAAAJ",
+    "available": 635,
+    "not_available": 13
+  },
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?author_id=EicYvbwAAAAJ&engine=google_scholar_author&hl=en&start=20"
+  }
+}
