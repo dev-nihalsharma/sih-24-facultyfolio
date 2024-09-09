@@ -43,13 +43,21 @@ Node.js was chosen for its non-blocking, event-driven architecture, which is per
 **Use Case:**  
 Node.js is used to handle server-side logic, manage API endpoints, and interact with databases.
 
-## [React Native](https://reactnative.dev/)
+## [Next.js](https://nextjs.org/)
 
-**Why React Native?**  
-React Native allows us to build mobile applications that work seamlessly across both iOS and Android with a single codebase. This reduces development time and ensures consistent functionality across platforms. Its ability to use JavaScript and a rich set of pre-built components speeds up the development process.
+**Why Next.js?**  
+Next.js is a popular React framework for frontend development because it offers server-side rendering (SSR), static site generation (SSG), and excellent performance. It simplifies routing, optimizes SEO, and improves page load times. With built-in API routes, Next.js also enhances scalability, making it ideal for modern, dynamic applications.
 
 **Use Case:**  
-React Native is utilized to create a cross-platform mobile app with native performance and user experience.
+Next.js is utilized to create modern web apps with seamless performance and user experience.
+
+## [TailwindCSS](https://tailwindcss.com/)
+
+**Why TailwindCSS?**  
+Tailwind CSS is a utility-first framework that speeds up front-end development by providing pre-built classes for layout, styling, and responsiveness. It simplifies customization, reduces the need for custom CSS, and ensures consistency across designs. Tailwind is also highly efficient, making the styling process faster and more maintainable.
+
+**Use Case:**  
+TailwindCSS is utilized to create clean and visually appealing ui/ux with simpler way to write css.
 
 ## [DigitalOcean](https://www.digitalocean.com/)
 
