@@ -21,8 +21,8 @@ This README provides an overview of the project, including team details, relevan
 
 ## Project Links
 
+- **Final SIH Presentation:** [Final SIH Presentation](/files/SIH2024_IDEA_Presentation.pdf)
 - **Internal Presentation:** [Internal Presentation](/files/Internal_PPT_HEXA-CODE.pdf)
-- **Final SIH Presentation:** [Final SIH Presentation](/files/SIH_PPT_HEXA-CODE.pdf)
 - **Video Demonstration:** [Watch Video](https://youtu.be/Do3K7ktkiVw?si=XyjBT69DgSe0C3H-)
 - **Live Deployment:** [Visit Web App](https://facultyfolio.netlify.app/)
 - **Source Code:** [GitHub Repository](https://github.com/dev-nihalsharma/sih-24-facultyfolio)
