@@ -2,10 +2,9 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Sidebar from '../app/Sidebar';
-import { EventList } from '../app/EventList';
-import Loading from '../app/Loading'; // Import the Loading component
-import { ScheduleListComponent } from '../app/EventListComponent';
+import Sidebar from '../components/Sidebar';
+import { EventList } from '../components/EventList';
+import { ScheduleListComponent } from '../components/ScheduleListComponent';
 
 export default function Home() {
   const [username, setUsername] = useState('Guest');
@@ -42,16 +41,12 @@ export default function Home() {
     setLoading(isLoading);
   };
 
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <>
       <main className='flex flex-col md:flex-row min-h-screen font-roboto'>
         <Sidebar username={username} role={role} />
         <section className='flex-1 text-black mt-4 md:mt-0 md:pl-60'>
-          {role.toLowerCase() === 'manager' && (
+          {role.toLowerCase() === 'admin' && (
             <div>
               <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6'>
                 <h3 className='text-center font-bold text-2xl'>Events</h3>
@@ -59,7 +54,7 @@ export default function Home() {
               <EventList />
             </div>
           )}
-          {role.toLowerCase() != 'manager' && (
+          {role.toLowerCase() != 'admin' && (
             <div>
               <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6'>
                 <h3 className='text-center font-bold text-2xl'>Activites</h3>

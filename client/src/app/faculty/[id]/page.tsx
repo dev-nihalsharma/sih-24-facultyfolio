@@ -1,49 +1,49 @@
-"use client";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useParams } from "next/navigation";
-import Image from "next/image";
-import moment from "moment";
-import Sidebar from "@/app/Sidebar";
-import ArticleList from "@/app/CardsScholar";
-import { useToken } from "@/app/TokenContext";
+'use client';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'next/navigation';
+import Image from 'next/image';
+import moment from 'moment';
+import Sidebar from '@/components/Sidebar';
+import ArticleList from '@/components/CardsScholar';
+import { useToken } from '@/components/TokenContext';
 
 export default function Home() {
   const params = useParams();
-  const [accountCreatedAt, setAccountCreatedAt] = useState("");
-  const [facultyId, setFacultyId] = useState("");
-  const [email, setEmail] = useState("");
-  const [experience, setExperience] = useState("");
-  const [scholarAccount, setScholarAccount] = useState("");
-  const [username, setUsername] = useState("");
-  const [user, setUser] = useState("");
-  const [userRole, setUserrole] = useState("");
-  const [role, setRole] = useState("");
+  const [accountCreatedAt, setAccountCreatedAt] = useState('');
+  const [facultyId, setFacultyId] = useState('');
+  const [email, setEmail] = useState('');
+  const [experience, setExperience] = useState('');
+  const [scholarAccount, setScholarAccount] = useState('');
+  const [username, setUsername] = useState('');
+  const [user, setUser] = useState('');
+  const [userRole, setUserrole] = useState('');
+  const [role, setRole] = useState('');
   const accountAge = moment(accountCreatedAt).fromNow();
   const [scholarData, setScholarData] = useState([]);
-  const [thumbnail, setThumbnail] = useState("");
+  const [thumbnail, setThumbnail] = useState('');
   const { token } = useToken();
-  const [link, setLink] = useState("");
+  const [link, setLink] = useState('');
   useEffect(() => {
     const getCookieValue = (name: string) => {
-      if (typeof document !== "undefined") {
-        const cookies = document.cookie.split("; ");
+      if (typeof document !== 'undefined') {
+        const cookies = document.cookie.split('; ');
         const cookie = cookies.find((cookie) => cookie.startsWith(`${name}=`));
-        return cookie ? cookie.split("=")[1] : null;
+        return cookie ? cookie.split('=')[1] : null;
       }
       return null;
     };
 
     const FetchUsername = () => {
       try {
-        const userCookie = getCookieValue("user");
+        const userCookie = getCookieValue('user');
         if (userCookie) {
           const userData = JSON.parse(decodeURIComponent(userCookie));
           setUsername(userData.fullName);
-          setRole(userData.role || "Guest");
+          setRole(userData.role || 'Guest');
         }
       } catch (error) {
-        console.error("Error fetching user:", error);
+        console.error('Error fetching user:', error);
       }
     };
 
@@ -54,10 +54,9 @@ export default function Home() {
     if (token) {
       const fetchFacultySingle = async () => {
         try {
-          const response = await axios.post(
-            `https://facultyfolio.sujal.info/users/faculty/${params.id}`,
-            { token: token }
-          );
+          const response = await axios.post(`${process.env.API_ENDPOINT}/users/faculty/${params.id}`, {
+            token: token,
+          });
           setUser(response?.data?.fullName);
           setAccountCreatedAt(response?.data?.createdAt);
           setFacultyId(response?.data?.facultyId);
@@ -67,12 +66,9 @@ export default function Home() {
           setScholarAccount(response?.data?.scholarAccount);
           setScholarData(response?.data?.scholarData);
           setThumbnail(response?.data?.scholarData?.author?.thumbnail);
-          setLink(
-            response?.data?.scholarData?.search_metadata
-              ?.google_scholar_author_url
-          );
+          setLink(response?.data?.scholarData?.search_metadata?.google_scholar_author_url);
         } catch (error) {
-          console.error("Error fetching faculty data:", error);
+          console.error('Error fetching faculty data:', error);
         }
       };
       fetchFacultySingle();
@@ -81,13 +77,13 @@ export default function Home() {
   // console.log(thumbnail);
   return (
     <>
-      <main className="flex flex-col md:flex-row min-h-screen bg-gray-50 dark:bg-gray-900 font-roboto">
+      <main className='flex flex-col md:flex-row min-h-screen bg-gray-50 dark:bg-gray-900 font-roboto'>
         <Sidebar username={username} role={role} />
 
-        <section className="flex-1 mt-4 md:mt-0 md:pl-60 p-8 text-gray-800 dark:text-gray-200">
-          <div className="text-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
-            <h1 className="text-4xl font-bold mb-4">Profile</h1>
-            <div className="flex justify-center">
+        <section className='flex-1 mt-4 md:mt-0 md:pl-60 p-8 text-gray-800 dark:text-gray-200'>
+          <div className='text-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6'>
+            <h1 className='text-4xl font-bold mb-4'>Profile</h1>
+            <div className='flex justify-center'>
               <Image
                 width={120}
                 height={120}
@@ -96,25 +92,23 @@ export default function Home() {
                     ? thumbnail
                     : `https://ui-avatars.com/api/?name=${user}&background=ff9800&color=fff`
                 }
-                alt="Profile"
-                className="rounded-full border-4 border-gray-300 dark:border-gray-700"
+                alt='Profile'
+                className='rounded-full border-4 border-gray-300 dark:border-gray-700'
               />
             </div>
-            <h2 className="text-2xl font-semibold mt-4">{user}</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              Account created: <span className="font-medium">{accountAge}</span>
+            <h2 className='text-2xl font-semibold mt-4'>{user}</h2>
+            <p className='text-lg text-gray-600 dark:text-gray-400'>
+              Account created: <span className='font-medium'>{accountAge}</span>
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              Faculty ID: <span className="font-medium">{facultyId}</span>
+            <p className='text-lg text-gray-600 dark:text-gray-400'>
+              Faculty ID: <span className='font-medium'>{facultyId}</span>
             </p>
           </div>
 
           {/* Details Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-semibold mb-2">
-                Contact Information
-              </h3>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6'>
+            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md'>
+              <h3 className='text-lg font-semibold mb-2'>Contact Information</h3>
               <p>
                 <strong>Email: </strong>
                 {email}
@@ -124,21 +118,21 @@ export default function Home() {
                 {experience}
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-semibold mb-2">Account Details</h3>
+            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md'>
+              <h3 className='text-lg font-semibold mb-2'>Account Details</h3>
               <p>
                 <strong>Role: </strong>
                 {userRole}
               </p>
               <a href={link}>
                 <strong>Scholar Account: </strong>
-                <span className="text-blue-600">Click here to see Account</span>
+                <span className='text-blue-600'>Click here to see Account</span>
               </a>
             </div>
           </div>
           <div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
-              <h3 className="text-center font-bold text-2xl">Research Paper</h3>
+            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6'>
+              <h3 className='text-center font-bold text-2xl'>Research Paper</h3>
             </div>
             <ArticleList scholarData={scholarData} />
           </div>

@@ -1,36 +1,31 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  const isPublicPath =
-    path === "/login" ||
-    path === "/signup" ||
-    path === "/adminsignup" ||
-    path === "/forgetPassword";
-  const token = request.cookies.get("token")?.value || "";
+  const isPublicPath = path === '/sign-in' || path === '/sign-up' || path === '/forgetPassword';
+  const token = request.cookies.get('token')?.value || '';
 
   if (isPublicPath && token) {
-    return NextResponse.redirect(new URL("/dashboard", request.nextUrl));
+    return NextResponse.redirect(new URL('/dashboard', request.nextUrl));
   }
   if (!isPublicPath && !token) {
-    return NextResponse.redirect(new URL("/login", request.nextUrl));
+    return NextResponse.redirect(new URL('/sign-in', request.nextUrl));
   }
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    "/",
-    "/login",
-    "/signup",
-    "/forgetPassword",
-    "/adminsignup",
-    "/workspace",
-    "/dashboard",
-    "/faculty/:path*",
-    "/facultyBoard",
-    "/facultylist",
-    "/timetable",
+    '/',
+    '/sign-in',
+    '/sign-up',
+    '/forgetPassword',
+    '/workspace',
+    '/dashboard',
+    '/faculty/:path*',
+    '/facultyBoard',
+    '/facultylist',
+    '/timetable',
   ],
 };

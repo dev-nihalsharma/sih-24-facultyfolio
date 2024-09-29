@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
-import Loading from './Loading';
-import { TokenProvider } from './TokenContext';
+import { TokenProvider } from '../components/TokenContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {

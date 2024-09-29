@@ -1,12 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "ui-avatars.com",
-      "images.pexels.com",
-      "sdrive.blr1.cdn.digitaloceanspaces.com",
-      "scholar.googleusercontent.com",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ui-avatars.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sdrive.blr1.cdn.digitaloceanspaces.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'scholar.googleusercontent.com',
+        pathname: '**',
+      },
     ],
+  },
+  env: {
+    API_ENDPOINT: process.env.API_ENDPOINT,
   },
 };
 
