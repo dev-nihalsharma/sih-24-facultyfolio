@@ -76,68 +76,60 @@ export default function Home() {
   }, [params?.id, token]);
   // console.log(thumbnail);
   return (
-    <>
-      <main className='flex flex-col md:flex-row min-h-screen bg-gray-50 dark:bg-gray-900 font-roboto'>
-        <Sidebar username={username} role={role} />
+    <section className='flex-1 mt-4 overflow-y-auto p-8 text-gray-800 dark:text-gray-200'>
+      <div className='text-center bg-white dark:bg-gray-800 p-6 rounded-lg border mb-6'>
+        <h1 className='text-4xl font-bold mb-4'>Profile</h1>
+        <div className='flex justify-center'>
+          <Image
+            width={120}
+            height={120}
+            src={
+              thumbnail ? thumbnail : `https://ui-avatars.com/api/?name=${user}&background=ff9800&color=fff`
+            }
+            alt='Profile'
+            className='rounded-full border-4 border-gray-300 dark:border-gray-700'
+          />
+        </div>
+        <h2 className='text-2xl font-semibold mt-4'>{user}</h2>
+        <p className='text-lg text-gray-600 dark:text-gray-400'>
+          Account created: <span className='font-medium'>{accountAge}</span>
+        </p>
+        <p className='text-lg text-gray-600 dark:text-gray-400'>
+          Faculty ID: <span className='font-medium'>{facultyId}</span>
+        </p>
+      </div>
 
-        <section className='flex-1 mt-4 md:mt-0 md:pl-60 p-8 text-gray-800 dark:text-gray-200'>
-          <div className='text-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6'>
-            <h1 className='text-4xl font-bold mb-4'>Profile</h1>
-            <div className='flex justify-center'>
-              <Image
-                width={120}
-                height={120}
-                src={
-                  thumbnail
-                    ? thumbnail
-                    : `https://ui-avatars.com/api/?name=${user}&background=ff9800&color=fff`
-                }
-                alt='Profile'
-                className='rounded-full border-4 border-gray-300 dark:border-gray-700'
-              />
-            </div>
-            <h2 className='text-2xl font-semibold mt-4'>{user}</h2>
-            <p className='text-lg text-gray-600 dark:text-gray-400'>
-              Account created: <span className='font-medium'>{accountAge}</span>
-            </p>
-            <p className='text-lg text-gray-600 dark:text-gray-400'>
-              Faculty ID: <span className='font-medium'>{facultyId}</span>
-            </p>
-          </div>
-
-          {/* Details Section */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6'>
-            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md'>
-              <h3 className='text-lg font-semibold mb-2'>Contact Information</h3>
-              <p>
-                <strong>Email: </strong>
-                {email}
-              </p>
-              <p>
-                <strong>Experience: </strong>
-                {experience}
-              </p>
-            </div>
-            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md'>
-              <h3 className='text-lg font-semibold mb-2'>Account Details</h3>
-              <p>
-                <strong>Role: </strong>
-                {userRole}
-              </p>
-              <a href={link}>
-                <strong>Scholar Account: </strong>
-                <span className='text-blue-600'>Click here to see Account</span>
-              </a>
-            </div>
-          </div>
-          <div>
-            <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6'>
-              <h3 className='text-center font-bold text-2xl'>Research Paper</h3>
-            </div>
-            <ArticleList scholarData={scholarData} />
-          </div>
-        </section>
-      </main>
-    </>
+      {/* Details Section */}
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6'>
+        <div className='bg-white dark:bg-gray-800 p-6 rounded-lg border'>
+          <h3 className='text-lg font-semibold mb-2'>Contact Information</h3>
+          <p>
+            <strong>Email: </strong>
+            {email}
+          </p>
+          <p>
+            <strong>Experience: </strong>
+            {experience}
+          </p>
+        </div>
+        <div className='bg-white dark:bg-gray-800 p-6 rounded-lg border'>
+          <h3 className='text-lg font-semibold mb-2'>Account Details</h3>
+          <p>
+            <strong>Role: </strong>
+            {userRole}
+          </p>
+          <a href={link}>
+            <strong>Scholar Account: </strong>
+            <span className='text-blue-600'>Click here to see Account</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div className='bg-white dark:bg-gray-800 p-6 rounded-lg  mb-6'>
+          <h3 className='text-center font-bold text-2xl'>Research Paper</h3>
+        </div>
+        <ArticleList scholarData={scholarData} />
+      </div>
+    </section>
   );
 }

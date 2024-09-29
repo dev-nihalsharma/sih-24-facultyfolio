@@ -1,11 +1,11 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
-import { EventList } from '../../../components/EventList';
-import { ScheduleListComponent } from '../../../components/ScheduleListComponent';
 import HeaderBox from '@/components/HeaderBox';
-import { Spinner } from 'flowbite-react';
 import { TopFacultiesCard } from '@/components/TopFacultiesCard';
+import { UserProfileCard } from '@/components/UserProfileCard';
+import { useCallback, useEffect, useState } from 'react';
+import { EventList } from '../../components/RecentEventList';
+import { ScheduleListComponent } from '../../components/ScheduleListComponent';
 
 export default function Home() {
   const [user, setUser] = useState({} as User);
@@ -50,7 +50,7 @@ export default function Home() {
           />
           <div className='flex w-full justify-between gap-4 max-lg:flex-col'>
             <EventList user={user} /> {/* Pass loading handler */}
-            <EventList user={user} /> {/* Pass loading handler */}
+            <UserProfileCard user={user} /> {/* Pass loading handler */}
           </div>
 
           {user.role === 'admin' && <TopFacultiesCard />}

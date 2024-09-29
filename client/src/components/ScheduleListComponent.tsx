@@ -166,17 +166,17 @@ export function ScheduleListComponent() {
       <div className='flex flex-row w-full justify-between gap-4'>
         {/* Events Table */}
         <div className=' relative w-full overflow-auto  border rounded-lg mb-6 max-h-70'>
-          <Table hoverable className='min-w-full   dark:bg-gray-800'>
+          <Table hoverable className='min-w-full bg-white  dark:bg-gray-800'>
             <Table.Head className=' dark:bg-gray-700 '>
               <Table.HeadCell className='px-4 py-3'>Event Name</Table.HeadCell>
               <Table.HeadCell className='px-4 py-3'>Details</Table.HeadCell>
               <Table.HeadCell className='px-4 py-3'>Action</Table.HeadCell>
             </Table.Head>
-            <Table.Body className='divide-y divide-gray-200 dark:divide-gray-700'>
+            <Table.Body className='divide-y bg-white divide-gray-200 dark:divide-gray-700'>
               {events.map((schedule) => (
                 <Table.Row
                   key={schedule._id}
-                  className='bg-white mb-2 dark:border-gray-700 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200'
+                  className='bg-white hover:bg-white mb-2 dark:border-gray-700 dark:bg-gray-800  dark:hover:bg-gray-700 transition-colors duration-200'
                 >
                   <Table.Cell className='whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white'>
                     {schedule.event?.name || 'No event available'}
@@ -194,9 +194,9 @@ export function ScheduleListComponent() {
                   <Table.Cell className='px-4 py-3'>
                     <button
                       onClick={() => handleUpdateAttendance(schedule._id)}
-                      className={`rounded-sm ${schedule.isPresent ? 'bg-green-600' : 'bg-red-600'} ${
-                        schedule.isPresent && 'cursor-not-allowed'
-                      } px-4 py-2 text-white`}
+                      className={`rounded-sm ${
+                        schedule.isPresent ? 'bg-green-500' : 'bg-red-500 hover:bg-red-600'
+                      } ${schedule.isPresent && 'cursor-not-allowed'} px-4 py-2 text-white`}
                       disabled={schedule.isPresent ? true : false}
                     >
                       {schedule.isPresent ? 'Attendance marked' : 'Mark Attendance'}
@@ -220,7 +220,7 @@ export function ScheduleListComponent() {
               {timetables.map((schedule) => (
                 <Table.Row
                   key={schedule._id}
-                  className='bg-white dark:border-gray-700 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200'
+                  className='bg-white hover:bg-white dark:border-gray-700 dark:bg-gray-800  dark:hover:bg-gray-700 transition-colors duration-200'
                 >
                   <Table.Cell className='whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white'>
                     {schedule.timeTable?.day || 'No day available'}
@@ -236,9 +236,9 @@ export function ScheduleListComponent() {
                   <Table.Cell className='px-4 py-3'>
                     <button
                       onClick={() => handleUpdateAttendance(schedule._id)}
-                      className={`rounded-sm ${schedule.isPresent ? 'bg-green-600' : 'bg-red-600'} ${
-                        schedule.isPresent && 'cursor-not-allowed'
-                      } px-4 py-2 text-white`}
+                      className={`rounded-sm ${
+                        schedule.isPresent ? 'bg-green-500' : 'bg-red-400 hover:bg-red-600'
+                      } ${schedule.isPresent && 'cursor-not-allowed'} px-4 py-2 text-white`}
                       disabled={schedule.isPresent ? true : false}
                     >
                       {schedule.isPresent ? 'Attendance marked' : 'Mark Attendance'}

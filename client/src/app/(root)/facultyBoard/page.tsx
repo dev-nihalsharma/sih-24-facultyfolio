@@ -2,12 +2,15 @@
 
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
-import { FacultyBoard } from '../../../components/FacultyBoardComponent';
+import { AllFacultiesCard } from '../../../components/FacultyBoardComponent';
 import Sidebar from '../../../components/Sidebar';
+import HeaderBox from '@/components/HeaderBox';
+import { TopFacultiesCard } from '@/components/TopFacultiesCard';
+import { PoorPerformingFacultiesCard } from '@/components/PoorPerformingFacultiesCard';
+import { TopFacultiesCard2 } from '@/components/TopPerformingFaculties2';
 
 export default function Home() {
-  const [username, setUsername] = useState('Guest');
-  const [role, setRole] = useState('');
+  const [user, setUser] = useState({} as User);
   const [loading, setLoading] = useState(true); // Loading state for the entire page
   const router = useRouter();
 
@@ -22,8 +25,7 @@ export default function Home() {
       const userCookie = getCookieValue('user');
       if (userCookie) {
         const userData = JSON.parse(decodeURIComponent(userCookie));
-        setUsername(userData.fullName || 'Guest');
-        setRole(userData.role || 'Guest');
+        setUser(userData);
       }
     } catch (error) {
       console.error('Error fetching user:', error);
@@ -36,17 +38,29 @@ export default function Home() {
     FetchUsername();
   }, [FetchUsername]);
 
-  const handleLoadingChange = (isLoading: boolean) => {
-    setLoading(isLoading);
-  };
-
   return (
-    <section className='flex-1 text-black mt-4 md:mt-0 md:pl-60'>
-      <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6'>
-        <div>
-          <FacultyBoard />
+    <div className='flex justify-center'>
+      {loading ? (
+        <div className='flex h-screen w-full items-center justify-center '>
+          <p className='text-center text-gray-600'>Loading...</p>
         </div>
-      </div>
-    </section>
+      ) : (
+        <section className='h-screen w-full flex-col gap-8 bg-gray-25 px-8 '>
+          <HeaderBox
+            title='Faculty Board'
+            username={user.fullName}
+            subtext='Leader-board for faculties based on performance'
+            type='title'
+          />
+          <div className='flex flex-col gap-4 bg-white dark:bg-gray-800  rounded-lg   mb-6'>
+            <div className='flex gap-4 justify-between max-md:flex-col'>
+              <TopFacultiesCard2 />
+              <PoorPerformingFacultiesCard />
+            </div>
+            <AllFacultiesCard />
+          </div>
+        </section>
+      )}
+    </div>
   );
 }

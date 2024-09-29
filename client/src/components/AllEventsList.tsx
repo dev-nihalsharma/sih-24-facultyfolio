@@ -24,7 +24,22 @@ interface EventListProps {
   user: User;
 }
 
-export function EventList({ user }: EventListProps) {
+const dummyEvent = {
+  assignedfaculty: '0d156bebed9a5d8a',
+  category: 'test',
+  createdAt: '2024-09-28T17:34:40.000Z',
+  date: '2024-09-28',
+  description: 'test',
+  name: 'Test',
+  time: '23:04:00',
+  type: 'seminar',
+  updatedAt: '2024-09-28T17:34:40.000Z',
+  venue: 'APJ -11',
+  _id: '9a0e33a0f6b1a200',
+  _orgId: '9aabb9583385',
+};
+
+export function AllEventList({ user }: EventListProps) {
   const [eventData, setEventData] = useState<Event[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -66,27 +81,28 @@ export function EventList({ user }: EventListProps) {
   };
 
   return (
-    <div className='bg-white w-full  dark:bg-gray-800 p-4 pb-10 rounded-lg border mb-6 relative '>
+    <div className='bg-white w-full  dark:bg-gray-800 p-4 pb-14 rounded-lg border mb-6 relative '>
       <div className=''>
-        <h3 className='text-center font-bold text-2xl'>Recent Events</h3>
+        <h3 className='text-center font-bold text-2xl'>All Events</h3>
         {user.role === 'admin' && (
           <div className='w-full text-center my-2'>
-            <MdAdd
-              size={25}
-              className='absolute right-4 bottom-4 cursor-pointer text-[#0179FE]'
-              onClick={handleOpenModal} // Open modal on click
-            />
+            <button
+              className='absolute right-4 bottom-4 cursor-pointer p-2 rounded-full bg-[#0179FE]'
+              onClick={handleOpenModal}
+            >
+              <MdAdd color='white' size={25} />
+            </button>
           </div>
         )}
       </div>
       {loading ? (
         <p className='text-center text-gray-600'>Loading...</p>
       ) : (
-        <Accordion className='mx-auto my-2 border-none overflow-y-auto max-h-70'>
+        <Accordion className='mx-auto my-2 border-none rounded-lg overflow-y-auto max-h-70'>
           {eventData.length > 0 ? (
             eventData.map((event) => (
-              <Accordion.Panel key={event._id} className='bg-white  mb-4'>
-                <Accordion.Title className='text-lg font-semibold     border-none rounded-lg px-6 py-3 transition-colors duration-300 flex justify-between items-center'>
+              <Accordion.Panel key={event._id} className='bg-white rounded-none   mb-4'>
+                <Accordion.Title className='text-lg font-semibold    bg-blue-50   rounded-none  border-none px-6 py-3 transition-colors duration-300 flex justify-between items-center'>
                   <span className='flex items-center'>
                     <span className='font-bold'>{event.name}</span> - {event.type}
                   </span>

@@ -22,6 +22,11 @@ const nextConfig = {
         hostname: 'scholar.googleusercontent.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'scholar.google.com',
+        pathname: '**',
+      },
     ],
   },
   env: {

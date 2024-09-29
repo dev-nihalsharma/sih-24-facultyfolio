@@ -3,15 +3,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
-import { FaBars, FaChalkboardTeacher, FaList, FaRegCalendarAlt, FaRegClock, FaTimes } from 'react-icons/fa';
+import toast from 'react-hot-toast';
+import {
+  FaBars,
+  FaChalkboardTeacher,
+  FaCopy,
+  FaList,
+  FaRegCalendarAlt,
+  FaRegClock,
+  FaTimes,
+} from 'react-icons/fa';
 import { MdLogout, MdOutlineDashboard } from 'react-icons/md';
 
 interface SidebarProps {
   username: string;
   role: string;
+  id: string;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ username, role }) => {
+const Sidebar: React.FC<SidebarProps> = ({ username, role, id }) => {
   const pathName = usePathname();
   const router = useRouter();
   const [orgId, setOrgId] = useState('');
@@ -71,13 +81,13 @@ const Sidebar: React.FC<SidebarProps> = ({ username, role }) => {
 
         <nav className='flex-grow mt-8'>
           <Link
-            href='/dashboard'
+            href='/'
             className={`p-4 m-2 flex items-center text-gray-700  hover:text-white ${
-              pathName == '/dashboard' && 'bg-[#0179FE] text-white '
+              pathName == '/' && 'bg-[#0179FE] text-white '
             } transition-colors rounded-md hover:bg-[#0179FE] `}
           >
             <MdOutlineDashboard
-              className={`mr-2 text-xl hover:text-white  ${pathName == '/dashboard' && 'text-white'} `}
+              className={`mr-2 text-xl hover:text-white  ${pathName == '/' && 'text-white'} `}
             />
             Dashboard
           </Link>
@@ -114,19 +124,6 @@ const Sidebar: React.FC<SidebarProps> = ({ username, role }) => {
             />
             Events
           </Link>
-          {role === 'admin' && (
-            <Link
-              href='/facultylist'
-              className={`p-4  mx-2 flex items-center  text-gray-700 hover:text-white  ${
-                pathName == '/facultylist' && 'bg-[#0179FE]  text-white'
-              } transition-colors rounded-md hover:bg-[#0179FE]`}
-            >
-              <FaList
-                className={`mr-2 text-xl  hover:text-white ${pathName == '/facultylist' && 'text-white'} `}
-              />
-              FacultyList
-            </Link>
-          )}
         </nav>
         <div className='profile-section flex flex-row items-center justify-between px-2 py-4 border-t border-gray-300 space-x-3'>
           <div className='flex flex-row items-center gap-4'>
@@ -135,12 +132,29 @@ const Sidebar: React.FC<SidebarProps> = ({ username, role }) => {
               alt={`${username} Profile`}
               width={60}
               height={60}
-              className='rounded-full '
+              className='rounded-full cursor-pointer '
+              onClick={() => router.push(`/faculty/${id}`)}
             />
             <div className='flex flex-col items-start'>
-              <p className='text-gray-700 font-bold text-l capitalize'>{username}</p>
+              <p
+                className='text-gray-700 font-bold text-l capitalize cursor-pointer'
+                onClick={() => router.push(`/faculty/${id}`)}
+              >
+                {username}
+              </p>
               <p className='text-gray-500 font-bold text-sm capitalize'>{role}</p>
-              {role == 'admin' && <p className='text-gray-500  text-sm capitalize'>OrgId: {orgId}</p>}
+              {role == 'admin' && (
+                <div className='flex gap-2'>
+                  <p className='text-gray-500  text-sm capitalize'>OrgId: {orgId}</p>
+                  <FaCopy
+                    className='text-[#B4DBF9] cursor-pointer'
+                    onClick={() => {
+                      navigator.clipboard.writeText(orgId || '');
+                      toast.success('Copied To Clipboard');
+                    }}
+                  />
+                </div>
+              )}
             </div>
           </div>
 

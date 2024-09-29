@@ -53,7 +53,7 @@ const SignUpForm = () => {
 
           setToken(res?.data?.data?.token);
           toast.success('User Registered Successfully');
-          router.push('/dashboard');
+          router.push('/');
           return;
         }
       } else {
@@ -77,7 +77,7 @@ const SignUpForm = () => {
 
           toast.success('User Registered Successfully');
           setToken(res?.data?.data?.token);
-          router.push('/dashboard');
+          router.push('/');
           return;
         }
       }

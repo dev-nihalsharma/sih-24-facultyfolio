@@ -16,7 +16,7 @@ interface Faculty {
   appraisal: number;
 }
 
-export function AllFacultiesCard() {
+export function PoorPerformingFacultiesCard() {
   const [facultyData, setFacultyData] = useState<Faculty[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const { token } = useToken();
@@ -32,7 +32,7 @@ export function AllFacultiesCard() {
           token: token,
         });
         const sortedData = response.data.sort((a: Faculty, b: Faculty) => b.appraisal - a.appraisal);
-        setFacultyData(sortedData.slice(0, 10));
+        setFacultyData(sortedData.slice(-10, -1));
       } catch (error) {
         console.error('Error fetching faculty data:', error);
       } finally {
@@ -45,27 +45,28 @@ export function AllFacultiesCard() {
 
   if (loading) {
     return (
-      <div className='p-4 sm:p-6 md:p-8 border rounded-lg dark:bg-gray-900'>
-        <h2 className='text-2xl font-semibold text-gray-900 dark:text-white mb-4'>All Faculties</h2>
+      <div className='p-4 sm:p-6 md:p-8 border rounded-lg dark:bg-gray-900 w-full'>
+        <h2 className='text-2xl font-semibold text-gray-900 dark:text-white mb-4'>
+          Poor Performing Faculties
+        </h2>
         <p className='text-center text-gray-600'>Loading...</p>
       </div>
     );
   }
 
   return (
-    <div className='p-4 sm:p-6 md:p-8 border rounded-lg dark:bg-gray-900'>
-      <h2 className='text-2xl font-semibold text-gray-900 dark:text-white mb-2 '>All Faculties</h2>
+    <div className='p-4 sm:p-6 md:p-8 border rounded-lg dark:bg-gray-900 - w-full'>
+      <h2 className='text-2xl font-semibold text-gray-900 dark:text-white mb-2 '>
+        Poor Performing Faculties
+      </h2>
       <p className='text-14 lg:text-16 font-normal text-gray-600 mb-4 '>
-        All Faculties & there appraisal this semester
+        Poor Performing 10 Faculties with least appraisal this semester
       </p>
       <div className='relative overflow-auto max-h-80'>
         <Table hoverable className='min-w-full  bg-white dark:bg-gray-800'>
           <Table.Head className=' dark:bg-gray-700 rounded-none '>
             <Table.HeadCell className='px-4 py-5'>Position</Table.HeadCell>
             <Table.HeadCell className='px-4 py-5'>Faculty Name</Table.HeadCell>
-            <Table.HeadCell className='px-4 py-5'>Faculty Id</Table.HeadCell>
-            <Table.HeadCell className='px-4 py-5'>Role</Table.HeadCell>
-            <Table.HeadCell className='px-4 py-5'>Email</Table.HeadCell>
             <Table.HeadCell
               className='px-4 py-5'
               title={`Predicted appraisal based on faculty's research publications, event participation, projects, lectures and student feedback  `}
@@ -86,9 +87,6 @@ export function AllFacultiesCard() {
                 <Table.Cell className='whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white'>
                   {faculty.fullName}
                 </Table.Cell>
-                <Table.Cell className='px-4 py-3'>{faculty.facultyId}</Table.Cell>
-                <Table.Cell className='px-4 py-3'>{faculty.role}</Table.Cell>
-                <Table.Cell className='px-4 py-3'>{faculty.email}</Table.Cell>
                 <Table.Cell className='px-4 py-3'>{faculty.appraisal}%</Table.Cell>
                 <Table.Cell className='px-4 py-3'>
                   <button

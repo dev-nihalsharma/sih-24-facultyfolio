@@ -27,7 +27,7 @@ const SignInForm = () => {
 
         toast.success('User Logged In');
         setToken(res?.data?.data?.token);
-        router.push('/dashboard');
+        router.push('/');
       }
     } catch (error) {
       toast.error('Login failed. Please try again.');

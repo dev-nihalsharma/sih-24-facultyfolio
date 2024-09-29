@@ -1,5 +1,7 @@
 'use client';
-import { EventList } from '@/components/EventList';
+import { AllEventList } from '@/components/AllEventsList';
+import HeaderBox from '@/components/HeaderBox';
+import { EventList } from '@/components/RecentEventList';
 import { useToken } from '@/components/TokenContext';
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -28,32 +30,29 @@ const Events = () => {
     fetchUser();
   }, [fetchUser]);
 
-  const handleOpenModal = () => {
-    setShowAddEventModal(true); // Open modal
-  };
-
-  const handleCloseModal = () => {
-    setShowAddEventModal(false); // Close modal
-  };
-
   return (
-    <div className='flex'>
-      <section className='h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 p-8 xl:py-12'>
-        <div>
-          <div className='bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md mb-6'>
-            <h3 className='text-center font-bold text-2xl'>Events</h3>
-            <div className='w-full text-center my-2'>
-              <button
-                className='rounded-lg px-4 py-2 bg-blue-600 text-white'
-                onClick={handleOpenModal} // Open modal on click
-              >
-                Event Add
-              </button>
-            </div>
-          </div>
-          <EventList user={user} /> {/* Pass loading handler */}
+    <div className='flex justify-center'>
+      {loading ? (
+        <div className='flex h-screen w-full items-center justify-center '>
+          <p className='text-center text-gray-600'>Loading...</p>
         </div>
-      </section>
+      ) : (
+        <section className='h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 px-8'>
+          <div>
+            <HeaderBox
+              title='Ongoing '
+              username='Seminars , Webinars & Workshops'
+              subtext={
+                user.role === 'admin'
+                  ? 'Manage & Assign Events to faculty'
+                  : 'All on going events and there host'
+              }
+              type='greeting'
+            />
+            <AllEventList user={user} /> {/* Pass loading handler */}
+          </div>
+        </section>
+      )}
     </div>
   );
 };

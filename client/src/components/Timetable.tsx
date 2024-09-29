@@ -1,3 +1,4 @@
+'use client'; // 👈 directs Next.js to only execute this component on the client-side, avoiding server-side rendering issues
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useToken } from './TokenContext'; // Import the TokenContext
@@ -15,25 +16,25 @@ const Timetable: React.FC = () => {
   const [timetableData, setTimetableData] = useState<TimetableEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const { token } = useToken(); // Access the token from the context
-
   const times = [
-    '08:00 - 09:00 AM',
-    '09:00 - 10:00 AM',
-    '10:00 - 11:00 AM',
-    '11:00 - 12:00 AM',
-    '12:00 - 01:00 PM',
-    '01:00 - 02:00 PM',
-    '02:00 - 03:00 PM',
-    '03:00 - 04:00 PM',
-    '04:00 - 05:00 PM',
-    '05:00 - 06:00 PM',
-    '06:00 - 07:00 PM',
-    '07:00 - 08:00 PM',
+    '08:00-09:00',
+    '09:00-10:00',
+    '10:00-11:00',
+    '11:00-12:00',
+    '12:00-13:00',
+    '13:00-14:00',
+    '14:00-15:00',
+    '15:00-16:00',
+    '16:00-17:00',
+    '17:00-18:00',
+    '18:00-19:00',
+    '19:00-20:00',
   ];
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
 
   const findCourse = (day: string, time: string): JSX.Element => {
-    const course = timetableData.find((entry) => entry.day === day && entry.time === time);
+    const course = timetableData.find((entry) => entry.day == day && entry.time == time);
+    console.log(time);
     return course ? (
       <>
         <span className='text-sm font-bold capitalize'>{course.name}</span>
@@ -46,7 +47,6 @@ const Timetable: React.FC = () => {
       <>--</>
     );
   };
-
   useEffect(() => {
     const fetchTimetable = async () => {
       try {
@@ -83,7 +83,7 @@ const Timetable: React.FC = () => {
 
   return (
     <div className='overflow-x-auto'>
-      <table className='md:min-w-[50%] md:mx-auto table-auto border-collapse border border-gray-400 mb-10'>
+      <table className='md:min-w-[0%] md:mx-auto table-auto border-collapse border border-gray-400 mb-10'>
         <thead>
           <tr>
             <th className='border border-gray-400 px-4 py-2 text-center'>Time</th>
