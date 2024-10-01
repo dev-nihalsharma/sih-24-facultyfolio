@@ -76,7 +76,7 @@ export default function Home() {
               </button>
             </div>
           )}
-          <div className='pt-5'>
+          <div className='pt-5 '>
             <Timetable key={timetableKey} />
           </div>
           <EditTimetableModal show={showEditModal} onClose={toggleEditModal} onSuccess={refreshTimetable} />

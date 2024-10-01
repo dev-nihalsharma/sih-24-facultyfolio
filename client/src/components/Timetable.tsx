@@ -36,15 +36,17 @@ const Timetable: React.FC = () => {
     const course = timetableData.find((entry) => entry.day == day && entry.time == time);
     console.log(time);
     return course ? (
-      <>
+      <td key={day + time} className='bg-[#f6fef9] text-[#027948] rounded-lg px-4 py-2 text-center'>
         <span className='text-sm font-bold capitalize'>{course.name}</span>
         <br />
         <span className='text-sm'>
           {course.course}-Room: {course.room}
         </span>
-      </>
+      </td>
     ) : (
-      <>--</>
+      <td key={day + time} className=' border-4 border-[#f6fef9] rounded-lg px-4 py-2 text-center'>
+        <></>
+      </td>
     );
   };
   useEffect(() => {
@@ -82,13 +84,13 @@ const Timetable: React.FC = () => {
   }
 
   return (
-    <div className='overflow-x-auto'>
-      <table className='md:min-w-[0%] md:mx-auto table-auto border-collapse border border-gray-400 mb-10'>
+    <div className=' overflow-x-auto w-full'>
+      <table className='md:min-w-[100%] md:mx-auto border-separate border-spacing-2 table-auto  border-gray-400 mb-10'>
         <thead>
           <tr>
-            <th className='border border-gray-400 px-4 py-2 text-center'>Time</th>
+            <th className='px-4 py-2 text-center text-gray-600'>This Week</th>
             {days.map((day) => (
-              <th key={day} className='border border-gray-400 px-4 py-2 text-center'>
+              <th key={day} className='bg-[#d1e9ff] text-[#175cd3] px-4 py-2 rounded-lg text-center'>
                 {day}
               </th>
             ))}
@@ -97,12 +99,8 @@ const Timetable: React.FC = () => {
         <tbody>
           {times.map((time) => (
             <tr key={time}>
-              <td className='border border-gray-400 px-4 py-2 text-center'>{time}</td>
-              {days.map((day) => (
-                <td key={day + time} className='border border-gray-400 px-4 py-2 text-center'>
-                  {findCourse(day, time)}
-                </td>
-              ))}
+              <td className='bg-[#d1e9ff] text-[#175cd3] rounded-lg px-4 py-2 text-center'>{time}</td>
+              {days.map((day) => findCourse(day, time))}
             </tr>
           ))}
         </tbody>

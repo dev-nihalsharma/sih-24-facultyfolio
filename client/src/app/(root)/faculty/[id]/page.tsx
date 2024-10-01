@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import moment from 'moment';
 import Sidebar from '@/components/Sidebar';
@@ -24,6 +24,8 @@ export default function Home() {
   const [thumbnail, setThumbnail] = useState('');
   const { token } = useToken();
   const [link, setLink] = useState('');
+  const router = useRouter();
+
   useEffect(() => {
     const getCookieValue = (name: string) => {
       if (typeof document !== 'undefined') {
@@ -91,12 +93,17 @@ export default function Home() {
           />
         </div>
         <h2 className='text-2xl font-semibold mt-4'>{user}</h2>
-        <p className='text-lg text-gray-600 dark:text-gray-400'>
-          Account created: <span className='font-medium'>{accountAge}</span>
-        </p>
+
         <p className='text-lg text-gray-600 dark:text-gray-400'>
           Faculty ID: <span className='font-medium'>{facultyId}</span>
         </p>
+        <button
+          type='submit'
+          onClick={() => router.push('/faculty/appraisal-form')}
+          className=' py-2 px-4  bg-[#0179FE] text-white font-semibold rounded-md shadow-sm  hover:bg-[#0166fe] focus:outline-none focus:ring-2 focus:bg-[#0166fe]'
+        >
+          Send Appraisal Request
+        </button>
       </div>
 
       {/* Details Section */}
